@@ -1,0 +1,191 @@
+
+.form_container {
+  margin: auto;
+  margin-top: 150px;
+  padding: 1.3rem;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0.3rem 0.9rem 25px rgba(0, 0, 0, 0.1); 
+  border-radius: 20%;
+}
+
+.form_container div{
+  margin-top: 5px;
+  
+}
+
+.title{
+  font-size: 1.1rem;
+}
+
+.subtitle{
+  font-size: 0.8rem;
+  color: lightslategray;
+}
+
+.error{
+  color: red;
+  font-size: 0.8rem;
+}
+
+.Correct{
+  color: lightgreen;
+  font-size: 0.8rem;
+}
+
+
+/* Landing page for students and teachers */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.student, .teacher {
+  display: grid;
+  grid-template-areas: 
+    'header header header'
+    'sidemenu content content'
+    'footer footer footer';
+  grid-template-columns: 200px auto;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  width: 100vw; /* Ensures full width */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.header {
+  grid-area: header;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Ensure the header is positioned relatively for absolute positioning of the box */
+}
+
+.header .header-left,
+.header .header-center,
+.header .header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header .header-center {
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.sidemenu {
+  grid-area: sidemenu;
+  background-color: #444;
+  color: #fff;
+  padding: 20px;
+}
+
+.content {
+  grid-area: content;
+  padding: 20px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.student.sidebar-active, .teacher.sidebar-active {
+  grid-template-columns: 0 1fr; /* Hide sidebar */
+}
+
+.student.sidebar-active .sidemenu, .teacher.sidebar-active .sidemenu {
+  display: none;
+}
+
+#menuButton {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#menuButton:hover {
+  background-color: #666;
+}
+
+.user-icon,
+.notification-bell {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Transparent Box */
+.transparent-box {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position it right below the header */
+  left: 0;
+  right: 0; /* Ensure it spans the full width */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  z-index: 1000; /* Ensure it appears on top */
+}
+
+.transparent-box.show {
+  display: block;
+}
+
+.transparent-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.transparent-box li {
+  margin: 10px 0;
+}
+
+.transparent-box a {
+  color: white;
+  text-decoration: none;
+}
+
+.transparent-box a:hover {
+  text-decoration: underline;
+}
+/* Creating Quiz button */
+.Create {
+  position: absolute;
+  top: 20px; 
+  right: 20px; 
+  background-color: #333;
+  color: aliceblue;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+.Create:hover{
+  background-color: #666;
+
+}
+.content {
+  position: relative;
+}
+

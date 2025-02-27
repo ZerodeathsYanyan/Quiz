@@ -1,0 +1,396 @@
+@media (max-width: 768px) {
+  .student, .teacher {
+     grid-template-areas:
+        'header'
+        'content'
+        'sidemenu'
+        'footer';
+     grid-template-columns: 1fr;
+  }
+
+  .student.sidebar-active, .teacher.sidebar-active {
+     grid-template-rows: 0 1fr; 
+  }
+
+  .student.sidebar-active .sidemenu, .teacher.sidebar-active .sidemenu {
+     display: none;
+  }
+}
+.form_container {
+  margin: auto;
+  margin-top: 50px; 
+  padding: 1rem;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+  box-shadow: 0.3rem 0.9rem 25px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px;
+  background-color: white;
+  text-align: center;
+  position: relative;
+  padding-top: 50px; 
+}
+
+.form_container h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  top: 10px; 
+  left: 50%;
+  transform: translateX(-50%); 
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+
+
+
+.form_container div{
+  margin-top: 5px;
+  
+}
+
+.title{
+  font-size: 1.1rem;
+}
+
+.subtitle{
+  font-size: 0.8rem;
+  color: lightslategray;
+}
+
+.error{
+  color: red;
+  font-size: 0.8rem;
+}
+
+
+
+/* Landing page for students and teachers */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.student, .teacher {
+  display: grid;
+  grid-template-areas: 
+    'header header header'
+    'sidemenu content content'
+    'footer footer footer';
+  grid-template-columns: 200px auto;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  width: 100vw; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.header {
+  grid-area: header;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; 
+}
+
+.header .header-left,
+.header .header-center,
+.header .header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header .header-center {
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.sidemenu {
+  grid-area: sidemenu;
+  background-color: #444;
+  color: #fff;
+  padding: 20px;
+}
+
+.content {
+  grid-area: content;
+  padding: 20px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.student.sidebar-active, .teacher.sidebar-active {
+  grid-template-columns: 0 1fr; 
+}
+
+.student.sidebar-active .sidemenu, .teacher.sidebar-active .sidemenu {
+  display: none;
+}
+
+#menuButton {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#menuButton:hover {
+  background-color: #666;
+}
+
+.user-icon,
+.notification-bell {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+
+.transparent-box {
+  display: none;
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  z-index: 1000; 
+}
+
+.transparent-box.show {
+  display: block;
+}
+
+.transparent-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.transparent-box li {
+  margin: 10px 0;
+}
+
+.transparent-box a {
+  color: white;
+  text-decoration: none;
+}
+
+.transparent-box a:hover {
+  text-decoration: underline;
+}
+/* Creating Quiz button */
+.Create {
+  position: absolute;
+  top: 20px; 
+  right: 20px; 
+  background-color: #333;
+  color: aliceblue;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+.Create:hover{
+  background-color: #666;
+
+}
+.content {
+  position: relative;
+}
+/* end of button */
+
+/* AddQuiz.php css */
+.quiz {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+
+
+.quiz:hover {
+  background-color: #e9e9e9;
+  transform: scale(1.02);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.quiz-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+
+
+body.addQuiz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+body.addQuiz h1 {
+  text-align: center;
+}
+
+body.addQuiz form {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.addQuiz label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+body.addQuiz input[type="text"], 
+body.addQuiz textarea, 
+body.addQuiz select {
+  width: calc(100% - 16px); 
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+body.addQuiz input[type="file"] {
+  margin-bottom: 20px;
+}
+
+body.addQuiz button {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+body.addQuiz button:hover {
+  background-color: #45a049;
+}
+
+body.addQuiz button[type="button"] {
+  background-color: #2196F3;
+}
+
+body.addQuiz button[type="button"]:hover {
+  background-color: #0b7dda;
+}
+
+body.addQuiz button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+body.addQuiz .question {
+  border: 4px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+}
+
+body.addQuiz .question hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+body.addQuiz .question label {
+  margin-bottom: 5px;
+}
+
+body.addQuiz .question input[type="text"], 
+body.addQuiz .question textarea, 
+body.addQuiz .question select {
+  width: calc(100% - 16px); 
+  margin-top: 5px;
+}
+
+body.addQuiz .question .multiple-choice, 
+body.addQuiz .question .problem-solving {
+  margin-top: 10px;
+}
+
+.options-container {
+  display: flex;
+  gap: 20px;
+}
+
+.option-pair {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.question-container {
+  display: flex;
+  justify-content: space-between;
+}
+.question-column {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+.question-box {
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box; 
+}
+.question-number {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background-color: #f2f2f2;
+  padding: 5px 10px;
+  border-radius: 50%;
+  font-size: 1.2em;
+}
+
+.question-content {
+  margin-left: 40px;
+}
+
+/* end addQuiz.php */
